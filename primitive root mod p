@@ -1,0 +1,8 @@
+p=113 #input prime number p
+count = 0 #initialize counting the primitive roots mod p
+for k in range(1,p):
+    set = {k^a % p for a in range(p-1)} #consider powers of k^a
+    if len(set) == p-1:
+        count+=1
+        print(k,"is a primitive root modulo",p)
+print("There are",count,"primitive roots modulo",p)
